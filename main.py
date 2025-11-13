@@ -5,6 +5,7 @@ import pandas as pd
 #from crawlers.ptt_crawler import PttCrawler
 from analysis.analyzer import PowerbankAnalyzer
 from crawlers.mobile_crawler import MobileCrawler
+from crawlers.momo_crawler import MomoCrawler
 
 # === Step 0️⃣ 輸出資料夾 ===
 output_dir = os.path.expanduser("~/AICompetition/crawlers_result")
@@ -39,9 +40,10 @@ def check_csv(csv_file):
 #ptt.save_to_csv(ptt_csv)
 #ptt.close()
 
-# 使用 MobileCrawler
+
 
 if __name__ == "__main__":
+    # 使用 MobileCrawler
     crawler = MobileCrawler(
         keyword="行動電源",
         output_path=output_dir,
@@ -52,6 +54,17 @@ if __name__ == "__main__":
     mobile_csv = os.path.join(output_dir, "data_mobile.csv")
     crawler.save_csv(mobile_csv)
     crawler.close()
+    
+    # ---- momo ----
+    momo = MomoCrawler(keyword="行動電源", timeout=20)
+    print("開始爬取 momo...")
+    df_momo = momo.crawl(pages=1, delay=0.8)  # 需要多頁可自行調整 pages
+    momo_csv = os.path.join(output_dir, "data_momo.csv")
+    # 兩種擇一：直接用內建 save_csv 或自行輸出 pandas
+    momo.save_csv(momo_csv)
+    # df_momo.to_csv(momo_csv, index=False, encoding="utf-8-sig")
+    print(f"momo 已輸出 CSV：{momo_csv}")
+
 """
 # === Step 3️⃣ 整合分析 ===
 csv_files = []

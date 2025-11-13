@@ -1,3 +1,4 @@
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -36,3 +37,4 @@ class PowerbankAnalyzer:
     def save(self, filename="analyzed_data.csv"):
         self.df.to_csv(filename, index=False, encoding="utf-8-sig")
         print(f"分析後資料已輸出至 {filename}")
+"""
