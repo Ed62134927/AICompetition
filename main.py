@@ -3,9 +3,10 @@ import os
 import pandas as pd
 #from crawlers.dcard_crawler_api import DcardCrawlerAPI
 #from crawlers.ptt_crawler import PttCrawler
-from analysis.analyzer import PowerbankAnalyzer
+#from analysis.analyzer import PowerbankAnalyzer
 from crawlers.mobile_crawler import MobileCrawler
-from crawlers.momo_crawler import MomoCrawler
+#from crawlers.pchome_crawler import PChomeCrawler
+#from crawlers.momo_crawler import MomoCrawler
 
 # === Step 0️⃣ 輸出資料夾 ===
 output_dir = os.path.expanduser("~/AICompetition/crawlers_result")
@@ -54,7 +55,7 @@ if __name__ == "__main__":
     mobile_csv = os.path.join(output_dir, "data_mobile.csv")
     crawler.save_csv(mobile_csv)
     crawler.close()
-    
+    """
     # ---- momo ----
     momo = MomoCrawler(keyword="行動電源", timeout=20)
     print("開始爬取 momo...")
@@ -64,6 +65,15 @@ if __name__ == "__main__":
     momo.save_csv(momo_csv)
     # df_momo.to_csv(momo_csv, index=False, encoding="utf-8-sig")
     print(f"momo 已輸出 CSV：{momo_csv}")
+    
+    # 使用 PChomeCrawler
+    pchome = PChomeCrawler(keyword="行動電源", timeout=20)
+    print("開始爬取 PChome...")
+    df_pchome = pchome.crawl(pages=2, delay=1.0)
+    pchome_csv = os.path.join(output_dir, "data_pchome.csv")
+    pchome.save_csv(pchome_csv)
+    print(f"PChome 已輸出 CSV：{pchome_csv}")
+    """
 
 """
 # === Step 3️⃣ 整合分析 ===
