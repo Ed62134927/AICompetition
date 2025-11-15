@@ -35,22 +35,23 @@ class MobileCrawler:
         return comments
 
 
-    def fetch_all_articles(self, max_pages=3):
+    def fetch_all_articles(self):
         print(f"開始爬取 Mobile01，搜尋關鍵字：{self.keyword}")
-        for page in range(1, max_pages + 1):
+        page = 1
+        while True:
             url = f"https://www.mobile01.com/topiclist.php?f=738&p={page}"
             print(f"抓取第 {page} 頁：{url}")
             response = requests.get(url, headers=self.headers)
             if response.status_code != 200:
                 print(f"無法存取 {url} (status {response.status_code})")
-                continue
+                break
 
             soup = BeautifulSoup(response.text, "html.parser")
             topics = soup.select("div.l-listTable__tr:not(.l-listTable__thead)")
 
             if not topics:
-                print(f"第 {page} 頁沒有找到文章。")
-                continue
+                print(f"第 {page} 頁沒有找到文章，停止爬取。")
+                break
 
             count = 0
             for topic in topics:
@@ -59,7 +60,6 @@ class MobileCrawler:
                     continue
                 title = title_tag.text.strip()
                 link = self.base_url + "/" + title_tag["href"].lstrip("/")
-
 
                 # ✅ 關鍵字過濾
                 if self.keyword in title:
@@ -71,9 +71,11 @@ class MobileCrawler:
                         "comments": " || ".join(comments) if comments else ""
                     })
                     count += 1
-            
+
             print(f"第 {page} 頁共找到 {count} 篇包含「{self.keyword}」的文章")
+            page += 1
             time.sleep(1)
+
 
     def save_csv(self, filename):
         if not self.articles:
@@ -85,3 +87,5 @@ class MobileCrawler:
 
     def close(self):
         print("MobileCrawler 任務完成")
+        
+        

@@ -44,6 +44,7 @@ def check_csv(csv_file):
 
 
 if __name__ == "__main__":
+    
     # 使用 MobileCrawler
     crawler = MobileCrawler(
         keyword="行動電源",
@@ -55,6 +56,7 @@ if __name__ == "__main__":
     mobile_csv = os.path.join(output_dir, "data_mobile.csv")
     crawler.save_csv(mobile_csv)
     crawler.close()
+    
     """
     # ---- momo ----
     momo = MomoCrawler(keyword="行動電源", timeout=20)
@@ -65,16 +67,17 @@ if __name__ == "__main__":
     momo.save_csv(momo_csv)
     # df_momo.to_csv(momo_csv, index=False, encoding="utf-8-sig")
     print(f"momo 已輸出 CSV：{momo_csv}")
-    
+    """
+    """
     # 使用 PChomeCrawler
-    pchome = PChomeCrawler(keyword="行動電源", timeout=20)
+    
+    pchome = PChomeCrawler(keyword="行動電源", timeout=20, debug=True)
     print("開始爬取 PChome...")
     df_pchome = pchome.crawl(pages=2, delay=1.0)
     pchome_csv = os.path.join(output_dir, "data_pchome.csv")
     pchome.save_csv(pchome_csv)
     print(f"PChome 已輸出 CSV：{pchome_csv}")
     """
-
 """
 # === Step 3️⃣ 整合分析 ===
 csv_files = []
