@@ -20,10 +20,28 @@ pip install -r requirements.txt
 python main.py
 
 
-## 時間序列預測：
+## 使用者需求搜尋熱度時間序列預測：
 
-cd ~/timeseries
+cd ~/timeseries_UserRequirements
+
+最終結果請使用第一點的json檔案
+
+1. AutoTs自動預測 & 訓練集為5年週資料
+python timeseries_UR_autoML.py
+
+輸出為5個維度歷史數據及預測8週的autots_forecast_all_weeks.json
+
+
+2. 單純LSTM & 訓練集為90日單日資料
 
 python timeseries.py
 
-輸出為5個維度歷史數據及預測30天的json檔
+輸出為5個維度歷史數據及預測30天的lstm_forecast_all.json
+
+## 技術趨勢搜尋熱度時間序列預測：
+
+cd ~/timeseries_TechTrends
+
+python timeseries_TT.py
+
+輸出為氮化鎵充電器、磁吸行動電源、pd 行動電源、type c行動電源之歷史數據及預測24週（半年）的autots_forecast_TechTrends.json
