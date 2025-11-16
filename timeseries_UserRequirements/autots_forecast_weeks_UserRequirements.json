@@ -1,0 +1,272 @@
+{
+    "weight": {
+        "historical": [
+            {
+                "date": "2025-10-26",
+                "total": 25.75
+            },
+            {
+                "date": "2025-11-02",
+                "total": 12.0
+            },
+            {
+                "date": "2025-11-09",
+                "total": 14.0
+            },
+            {
+                "date": "2025-11-16",
+                "total": 14.75
+            }
+        ],
+        "forecast": [
+            {
+                "date": "2025-11-23",
+                "predicted_total": 15.25
+            },
+            {
+                "date": "2025-11-30",
+                "predicted_total": 16.0
+            },
+            {
+                "date": "2025-12-07",
+                "predicted_total": 16.519439725176078
+            },
+            {
+                "date": "2025-12-14",
+                "predicted_total": 17.019439725176078
+            },
+            {
+                "date": "2025-12-21",
+                "predicted_total": 17.519439725176078
+            },
+            {
+                "date": "2025-12-28",
+                "predicted_total": 18.269439725176078
+            },
+            {
+                "date": "2026-01-04",
+                "predicted_total": 18.769439725176078
+            },
+            {
+                "date": "2026-01-11",
+                "predicted_total": 19.519439725176078
+            }
+        ]
+    },
+    "price": {
+        "historical": [
+            {
+                "date": "2025-10-26",
+                "total": 15.4
+            },
+            {
+                "date": "2025-11-02",
+                "total": 4.6
+            },
+            {
+                "date": "2025-11-09",
+                "total": 5.2
+            },
+            {
+                "date": "2025-11-16",
+                "total": 2.6
+            }
+        ],
+        "forecast": [
+            {
+                "date": "2025-11-23",
+                "predicted_total": 2.7699999999999996
+            },
+            {
+                "date": "2025-11-30",
+                "predicted_total": 3.582121212121212
+            },
+            {
+                "date": "2025-12-07",
+                "predicted_total": 3.009692397428065
+            },
+            {
+                "date": "2025-12-14",
+                "predicted_total": 3.267947104481159
+            },
+            {
+                "date": "2025-12-21",
+                "predicted_total": 4.036344898466815
+            },
+            {
+                "date": "2025-12-28",
+                "predicted_total": 3.2611406538545094
+            },
+            {
+                "date": "2026-01-04",
+                "predicted_total": 4.225505010483267
+            },
+            {
+                "date": "2026-01-11",
+                "predicted_total": 4.3548562561609145
+            }
+        ]
+    },
+    "design": {
+        "historical": [
+            {
+                "date": "2025-10-26",
+                "total": 26.0
+            },
+            {
+                "date": "2025-11-02",
+                "total": 10.25
+            },
+            {
+                "date": "2025-11-09",
+                "total": 11.5
+            },
+            {
+                "date": "2025-11-16",
+                "total": 11.5
+            }
+        ],
+        "forecast": [
+            {
+                "date": "2025-11-23",
+                "predicted_total": 9.827827551400189
+            },
+            {
+                "date": "2025-11-30",
+                "predicted_total": 8.160055850306415
+            },
+            {
+                "date": "2025-12-07",
+                "predicted_total": 6.361778508923688
+            },
+            {
+                "date": "2025-12-14",
+                "predicted_total": 4.340899211708593
+            },
+            {
+                "date": "2025-12-21",
+                "predicted_total": 2.5742487622452925
+            },
+            {
+                "date": "2025-12-28",
+                "predicted_total": 0.7002552667878371
+            },
+            {
+                "date": "2026-01-04",
+                "predicted_total": 0.0
+            },
+            {
+                "date": "2026-01-11",
+                "predicted_total": 0.0
+            }
+        ]
+    },
+    "compatibility": {
+        "historical": [
+            {
+                "date": "2025-10-26",
+                "total": 22.25
+            },
+            {
+                "date": "2025-11-02",
+                "total": 11.0
+            },
+            {
+                "date": "2025-11-09",
+                "total": 12.5
+            },
+            {
+                "date": "2025-11-16",
+                "total": 12.25
+            }
+        ],
+        "forecast": [
+            {
+                "date": "2025-11-23",
+                "predicted_total": 11.703778007056693
+            },
+            {
+                "date": "2025-11-30",
+                "predicted_total": 8.844924930248672
+            },
+            {
+                "date": "2025-12-07",
+                "predicted_total": 7.019026285127436
+            },
+            {
+                "date": "2025-12-14",
+                "predicted_total": 3.7440126084133
+            },
+            {
+                "date": "2025-12-21",
+                "predicted_total": 0.0
+            },
+            {
+                "date": "2025-12-28",
+                "predicted_total": 0.0
+            },
+            {
+                "date": "2026-01-04",
+                "predicted_total": 0.0
+            },
+            {
+                "date": "2026-01-11",
+                "predicted_total": 0.0
+            }
+        ]
+    },
+    "chargingSpeed": {
+        "historical": [
+            {
+                "date": "2025-10-26",
+                "total": 44.75
+            },
+            {
+                "date": "2025-11-02",
+                "total": 23.25
+            },
+            {
+                "date": "2025-11-09",
+                "total": 25.5
+            },
+            {
+                "date": "2025-11-16",
+                "total": 30.25
+            }
+        ],
+        "forecast": [
+            {
+                "date": "2025-11-23",
+                "predicted_total": 28.75
+            },
+            {
+                "date": "2025-11-30",
+                "predicted_total": 31.150761776398568
+            },
+            {
+                "date": "2025-12-07",
+                "predicted_total": 33.456574393042345
+            },
+            {
+                "date": "2025-12-14",
+                "predicted_total": 31.314589828118045
+            },
+            {
+                "date": "2025-12-21",
+                "predicted_total": 29.068384156738038
+            },
+            {
+                "date": "2025-12-28",
+                "predicted_total": 29.162363955502773
+            },
+            {
+                "date": "2026-01-04",
+                "predicted_total": 29.256343754267508
+            },
+            {
+                "date": "2026-01-11",
+                "predicted_total": 29.350323553032243
+            }
+        ]
+    }
+}
