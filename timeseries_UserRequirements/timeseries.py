@@ -60,10 +60,15 @@ def lstm_forecast(csv_path):
         last_seq = np.append(last_seq[1:], pred).reshape(look_back, 1)
 
     preds = scaler.inverse_transform(np.array(preds).reshape(-1, 1)).flatten()
+    preds = np.array(preds)  # <- 確保是 NumPy array
+    preds = preds.clip(min=0)
+
     future_dates = pd.date_range(df["date"].iloc[-1] + pd.Timedelta(days=1), periods=future_days)
 
     return {
-        "historical": df[["date", "total"]].assign(date=df["date"].dt.strftime("%Y-%m-%d")).to_dict(orient="records"),
+        "historical": df[["date", "total"]].tail(10)  # 只取最後 10 筆
+                     .assign(date=df["date"].dt.strftime("%Y-%m-%d"))
+                     .to_dict(orient="records"),
         "forecast": pd.DataFrame({
             "date": future_dates.strftime("%Y-%m-%d"),
             "predicted_total": preds
