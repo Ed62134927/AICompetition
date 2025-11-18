@@ -3,7 +3,6 @@ import os
 import pandas as pd
 #from crawlers.dcard_crawler_api import DcardCrawlerAPI
 #from crawlers.ptt_crawler import PttCrawler
-#from analysis.analyzer import PowerbankAnalyzer
 from crawlers.mobile_crawler import MobileCrawler
 #from crawlers.pchome_crawler import PChomeCrawler
 #from crawlers.momo_crawler import MomoCrawler
@@ -78,26 +77,3 @@ if __name__ == "__main__":
     pchome.save_csv(pchome_csv)
     print(f"PChome 已輸出 CSV：{pchome_csv}")
     """
-"""
-# === Step 3️⃣ 整合分析 ===
-csv_files = []
-#if check_csv(dcard_csv):
-#    csv_files.append(dcard_csv)
-#if check_csv(ptt_csv):
-#    csv_files.append(ptt_csv)
-if check_csv(mobile_csv):
-    csv_files.append(mobile_csv)
-
-if csv_files:
-    analyzer = PowerbankAnalyzer(csv_files)
-    analyzer.analyze_keywords()
-
-    analyzed_csv = os.path.join(output_dir, "powerbank_analyzed.csv")
-    chart_path = os.path.join(output_dir, "powerbank_summary.png")
-
-    analyzer.save(analyzed_csv)
-    analyzer.visualize(chart_path)
-    print("\n專案完成！分析結果已存入：", output_dir)
-else:
-    print("沒有可分析的資料，流程結束")
-"""
