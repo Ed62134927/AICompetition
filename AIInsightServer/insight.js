@@ -34,6 +34,14 @@ app.get("/api/insight", async (req, res) => {
       rows: readCSV(`${ROOT}/timeseries_TechTrends/${file}`)
     }));
 
+    const userRequirementsFiles = ["powerBank_chargingSpeed.csv", "powerBank_compatibility.csv", "powerBank_design.csv", "powerBank_price.csv", "powerBank_weight.csv"
+      , "week_powerBank_chargingSpeed.csv", "week_powerBank_chargingSpeed.csv", "week_powerBank_compatibility.csv", "week_powerBank_design.csv", "week_powerBank_price.csv", "week_powerBank_weight.csv", "week_powerBank_chargingSpeed.csv"];
+    const userRequirementsData = userRequirementsFiles.map(file => ({
+      category: file.replace(".csv", ""),
+      rows: readCSV(`${ROOT}/timeseries_UserRequirements/${file}`)
+    }));
+
+
     // ② NLP / ABSA
     const absaData = readCSV(`${ROOT}/nlp_result/absa_results.csv`);
 
@@ -59,6 +67,9 @@ app.get("/api/insight", async (req, res) => {
 === 技術趨勢資料（GaN / PD / MagSafe / TypeC） ===
 ${JSON.stringify(techData, null, 2)}
 
+=== 消費者需求趨勢資料===
+${JSON.stringify(userRequirementsData, null, 2)}
+
 === NLP ABSA（前 40 筆樣本） ===
 ${JSON.stringify(absaData.slice(0, 40), null, 2)}
 
@@ -74,6 +85,7 @@ ${JSON.stringify(reviewData, null, 2)}
 
 請輸出單一段落，包含：
 - 技術聲量變化（GaN、PD、MagSafe、TypeC）
+- 消費者需求聲量變化
 - ABSA 的痛點/亮點（重量、發熱、容量、材質、充電線）
 - 不同價格帶消費者的行為差異
 - 最後總結市場策略洞察（限 180 字）。
