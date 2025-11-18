@@ -45,3 +45,17 @@ cd ~/timeseries_TechTrends
 python timeseries_TT.py
 
 輸出為氮化鎵充電器、磁吸行動電源、pd 行動電源、type c行動電源之歷史數據及預測24週（半年）的autots_forecast_TechTrends.json
+
+## 1：使用2和4的結果以及爬蟲的評論標題當作promt串api生成
+cd AIInsightServer
+npm install
+建立 .env（每位組員必做）
+
+在 AIInsightServer 之內，手動建立檔案：
+.env  (不要push到github，很重要)
+
+
+內容貼上同一組 API Key（）：GEMINI_API_KEY="你的APIKEY" (Conrad保管)
+
+node insight.js
+到瀏覽器貼上http://localhost:8000/api/insight
